@@ -4,6 +4,7 @@ import requests
 import streamlit.components.v1 as components
 import yfinance as yf
 from datetime import date
+from streamlit_player import st_player
 
 
 class Tweet(object):
@@ -75,12 +76,12 @@ st.markdown('##')
 st.subheader('El Precio de Bitcoin')
 
 bitcoin = 'BTC-USD'
-ticker_data = yf.Ticker(bitcoin)
+bitcoin_data = yf.Ticker(bitcoin)
 
 today = date.today()
 
-ticker_df = ticker_data.history(period='1d', start='2014-9-15', end=today)
-st.line_chart(ticker_df.Close)
+bitcoin_df = bitcoin_data.history(period='1d', start='2014-9-15', end=today)
+st.line_chart(bitcoin_df.Close)
 
 st.markdown('###')
 
@@ -133,3 +134,63 @@ with row4_2:
     st.image(img_twitter)
     st.write('*Twitter "Tip Jar"*')
     
+row5_1, row5_2 = st.columns(2)
+
+with row5_1:
+    img_ransomware = Image.open('ransomware.jpg')
+    st.image(img_ransomware)
+
+with row5_2:
+    st.subheader('El Crimen con Críptomoneda')
+    st.write('''
+    Norteamérica es el blanco más grande del crimen usando críptomoneda en el mundo, hasta el punto donde norteamericanos dieron $131 millón al atacantes en
+    el año pasado. El grupo de investigación, *Chainalysis*, siguió el dinero, y ellos creen que muchos de los atacantes son de Rusia. Por ejemplo, grupos
+    de ransomware como NetWalker atacaron organizaciones, hospitales, y empresas en los Estados Unidos, exigiendo dinero en la forma de críptomoneda. Esta es 
+    la forma nueva de guerra, usando tecnología y anonimato de críptomonedas a atacar. El presidente de los Estados Unidos, Joe Biden, exigió que el presidente 
+    de Rusia, Vladimir Putin, a controlar estos grupos de ransomware, porque él lo va a terrorismo. 
+    ''')
+    st.write('''
+    Aunque *Chainalysis* describe estos acciones ilegales, ellos dicen que ransomware y críptomoneda por crimen es raro. Este aspecto de críptomoneda es porque su
+    naturaleza, donde transacciones son anónimos y por el internet. Pero, es hipócrito por bancos como JPMorgan o el Banco Central Europeo decir que bitcoin es por
+    criminales, porque criminales usan la moneda fíat todos los días. 
+    ''')
+
+st.subheader('"El *Stablecoin*"')
+
+usdc = 'USDC-USD'
+usdc_data = yf.Ticker(usdc)
+
+usdc_df = usdc_data.history(period='1d', start='2018-10-08', end=today)
+st.line_chart(usdc_df.Close)
+
+row6_1, row6_2 = st.columns(2)
+
+with row6_1:
+    st.subheader('Críptomoneda, Pero ¿Libre de Riesgos?')
+
+    st.write('''
+    *Valiu* es una empresa de carteras por críptomonedas, con muchos usuarios en Venezuela. El propósito de esta empresa es por los ciudadanos y sus necesidades.
+    Un director, Tomas Fox, dijo, "So many Latin American countries have economic instability, so the people aren't really interested in trading cryptocurrency
+    or getting exposure to Bitcoin because it's going to $80,000... People are trying to survive, so they need the ability to switch between their local currency
+    and cryptocurrency to preserve its value." Este es donde el *stablecoin* tiene valor. Esta críptomoneda sigue el dolar de los Estados Unidos, entonces es como
+    una mondea fíat. Pero, es todo digital. 
+    ''')
+    st.write('''
+    *$USDC* es un ejemplo de un stablecoin, pero hay otros - Tether, Dao, GUSD, etc. Stablecoins resolven la problema más grande que muchas personas tienen con
+    bitcoin o otras críptomonedas - el riesgo. Como el precio es siempre un dolar, críptomoneda se converten a su tecnología - *el blockchain*.
+    ''')
+
+with row6_2:
+    img_usdc = Image.open('stablecoin.jpg')
+    st.image(img_usdc)
+
+
+row7_1, row7_2 = st.columns(2)
+
+with row7_1:
+    img_map = Image.open('map.jpg')
+    st.image(img_map)
+
+
+with row7_2:    
+    st_player('https://www.youtube.com/watch?v=4_I2k8JYtF8')
