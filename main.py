@@ -88,7 +88,7 @@ st.markdown('###')
 row3_1, row3_2 = st.columns(2)
 
 with row3_1:
-    t = Tweet("https://twitter.com/nayibbukele/status/1449226485609504768?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet").component(430)
+    t1 = Tweet("https://twitter.com/nayibbukele/status/1449226485609504768?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet").component(430)
     st.write('*Nayib Bukele, el Presidente de El Salvador*')
 
 with row3_2:
@@ -191,6 +191,46 @@ with row7_1:
     img_map = Image.open('map.jpg')
     st.image(img_map)
 
-
 with row7_2:    
     st_player('https://www.youtube.com/watch?v=4_I2k8JYtF8')
+
+row8_1, row8_2 = st.columns(2)
+
+with row8_1:
+    st.subheader('La Personalidad de Nayib Bukele')
+
+    st.write('''
+    El Presidente de El Salvador, Nayib Bukele, ha intercambiado bitcoin como una persona de la "Generación Z," usando su celular. Cuando bitcoin fue arriba, 
+    este estaba un aspecto llamativo, por los inversores de crípto y los gobiernos y bancos del mundo. Él pareció ser un genio, trayendo El Salvador al frente
+    de tecnología. Otros paises estaban mirando a hacer bitcoin una moneda legal también, siguiendo el éxito en un país de América Latina. Pero, hoy, con bitcoin
+    abajo 40%, las consecuencias de Bukele son claro - *Moody's*, un agencia de clasificación por las finanzas, creen que la inversión de bitcoin ha costado 
+    El Salvador $22 millón. La población siente las consecuencias más que el presidente, quien usó $15 millón más de las reserves del país para comprar 410 bitcoin
+    "en descuento." La problema es que El Salvador ha resignado control de millones de sus dolares a una forma de moneda que ellos tienen ningún control sobre, que
+    es críptomoneda por diseño. Este crea muchas problemas cuando el pais necesita funcionar con bancos, especialmente El Fondo Monetario Internacional. Ahora mismo, 
+    El Salvador necesita un prestámo por el IMF, pero el organización está nervioso, contando a El Salvador revocar bitcoin. Este ejemplo demonstra la natura de Bukele,
+    quien se ha llamando un autoritario o dictador. Él ha tenido conflictos con la prensa gratis, su gobierno, y manifestantes. Él controla las fianzas del país con su 
+    celular, usando Twitter hablar a todo del mundo. 
+    ''')
+
+    st.write('''
+    En tiempos buenos, bitcoin sirve las personas que necesitan el acceso, pero en tiempos malos, bitcoin dificulta todo el país. Hoy, su relación con bitcoin está bloqueando 
+    ellos por ayuda financiero, haciendo la situación irónico. 
+    ''')
+
+    with row8_2:
+        t2 = Tweet("https://twitter.com/nayibbukele/status/1485649494502875137").component(400)
+
+
+row9_1, row9_2 = st.columns(2)
+
+with row9_1:
+    img_arizona = Image.open('arizona.jpg')
+    st.image(img_arizona)
+
+with row9_2:
+    st.subheader('La Adopción en los Estados Unidos')
+
+    st.write('''
+    En el 28 de enero, un senador estatal introdució un proyecto de ley para hacer bitcoin una moneda legal en Arizona. Aunque no es en la constitución por estados
+    hacer sus monedas legales, hay movimientos en los gobiernos de Texas y Ohio también. 
+    ''')
